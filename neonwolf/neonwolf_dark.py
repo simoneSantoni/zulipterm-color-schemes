@@ -1,6 +1,6 @@
 """
-MEADOW DARK
------------
+NEONWOLF DARK
+-------------
 Based on the Base2Tone Meadow Dark color scheme (Bram de Haan).
 Duotone theme using slate blue and light lime green.
 
@@ -9,7 +9,7 @@ For further details on themefiles look at the theme contribution guide.
 from pygments.styles.solarized import SolarizedDarkStyle
 
 from zulipterminal.config.color import Background
-from zulipterminal.themes.colors_meadow import DefaultBoldColor as Color
+from zulipterminal.themes.colors_neonwolf import DefaultBoldColor as Color
 
 
 # fmt: off
