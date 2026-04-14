@@ -21,7 +21,7 @@ Based on the [Base2Tone Field Dark](https://github.com/atelierbram/Base2Tone-kit
 
 Files: `base2tone-field/colors_base2tone_field.py`, `base2tone-field/base2tone_field_dark.py`
 
-### Neonwolf Dark
+### Meadow Dark
 
 Based on the [Base2Tone Meadow Dark](https://github.com/atelierbram/Base2Tone-kitty) color scheme by Bram de Haan. A duotone theme pairing slate blue with light lime green.
 
@@ -36,7 +36,7 @@ Based on the [Base2Tone Meadow Dark](https://github.com/atelierbram/Base2Tone-ki
 | Sky Blue | `#4299d7` | Timestamps, quotes |
 | Teal | `#277fbe` | Headers |
 
-Files: `neonwolf/colors_neonwolf.py`, `neonwolf/neonwolf_dark.py`
+Files: `meadow/colors_meadow.py`, `meadow/meadow_dark.py`
 
 ### Ubuntu Yaru Dark
 
@@ -84,11 +84,11 @@ python -c "import zulipterminal.themes; print(zulipterminal.themes.__path__[0])"
 
 ### 2. Copy the scheme files
 
-Using Neonwolf Dark as an example:
+Using Meadow Dark as an example:
 
 ```bash
 THEMES_DIR=$(python -c "import zulipterminal.themes; print(zulipterminal.themes.__path__[0])")
-cp neonwolf/colors_neonwolf.py neonwolf/neonwolf_dark.py "$THEMES_DIR/"
+cp meadow/colors_meadow.py meadow/meadow_dark.py "$THEMES_DIR/"
 ```
 
 ### 3. Register the theme
@@ -101,7 +101,7 @@ Edit `$THEMES_DIR/../config/themes.py` (i.e. `zulipterminal/config/themes.py`):
 from zulipterminal.themes import (
     gruvbox_dark,
     gruvbox_light,
-    neonwolf_dark,     # <-- add this
+    meadow_dark,     # <-- add this
     zt_blue,
     zt_dark,
     zt_light,
@@ -114,7 +114,7 @@ from zulipterminal.themes import (
 THEMES: Dict[str, Any] = {
     "gruvbox_dark": gruvbox_dark,
     "gruvbox_light": gruvbox_light,
-    "neonwolf_dark": neonwolf_dark,   # <-- add this
+    "meadow_dark": meadow_dark,   # <-- add this
     "zt_dark": zt_dark,
     "zt_light": zt_light,
     "zt_blue": zt_blue,
@@ -136,14 +136,14 @@ The new theme should appear in the list.
 Pass it on the command line:
 
 ```bash
-zulip-term --theme neonwolf_dark --color-depth 24bit
+zulip-term --theme meadow_dark --color-depth 24bit
 ```
 
 Or set it permanently in `~/.zuliprc`:
 
 ```ini
 [zterm]
-theme=neonwolf_dark
+theme=meadow_dark
 color-depth=24bit
 ```
 
@@ -157,7 +157,7 @@ Each color definition has three columns: 16-color, 256-color, and 24-bit. Use `-
 
 In 16-color mode, zulip-terminal sends standard color names (e.g. `dark_red`, `light_blue`) which the terminal maps to its own palette. If your terminal uses a non-standard palette (as many themes do), the 16-color fallback names in a scheme are chosen to produce the correct visual result in the *intended* terminal theme, not by their literal color name.
 
-For example, in Neonwolf Dark, `TEAL` uses the 16-color code `dark_red` because kitty's Meadow palette maps color1 (red) to `#277fbe` (a teal blue). This means **the 16-color mode only looks correct when using the matching terminal color scheme**.
+For example, in Meadow Dark, `TEAL` uses the 16-color code `dark_red` because kitty's Meadow palette maps color1 (red) to `#277fbe` (a teal blue). This means **the 16-color mode only looks correct when using the matching terminal color scheme**.
 
 For universal accuracy, use `--color-depth 256` or `--color-depth 24bit`.
 
@@ -172,9 +172,9 @@ Reinstalling or upgrading zulip-terminal will overwrite the themes directory. Yo
 ├── base2tone-field/
 │   ├── colors_base2tone_field.py  # Base2ToneFieldColor enum (palette)
 │   └── base2tone_field_dark.py    # STYLES + META (theme mapping)
-├── neonwolf/
-│   ├── colors_neonwolf.py         # NeonwolfColor enum (palette)
-│   └── neonwolf_dark.py           # STYLES + META (theme mapping)
+├── meadow/
+│   ├── colors_meadow.py         # MeadowColor enum (palette)
+│   └── meadow_dark.py           # STYLES + META (theme mapping)
 ├── yaru/
 │   ├── colors_yaru.py             # YaruColor enum (palette)
 │   └── ubuntu_yaru_dark.py        # STYLES + META (theme mapping)

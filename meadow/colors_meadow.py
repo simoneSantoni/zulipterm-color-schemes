@@ -1,5 +1,5 @@
 """
-COLORS FOR NEONWOLF DARK THEME
+COLORS FOR MEADOW DARK THEME
 -------------------------------
 Based on the Base2Tone Meadow Dark color scheme by Bram de Haan.
 Duotone theme: slate blue + light lime green.
@@ -17,7 +17,7 @@ from zulipterminal.config.color import color_properties
 
 
 # fmt: off
-class NeonwolfColor(Enum):
+class MeadowColor(Enum):
     # color          =  16code          256code   24code
 
     # Backgrounds & darks
@@ -47,4 +47,4 @@ class NeonwolfColor(Enum):
 # fmt: on
 
 
-DefaultBoldColor = color_properties(NeonwolfColor, "BOLD")
+DefaultBoldColor = color_properties(MeadowColor, "BOLD")
